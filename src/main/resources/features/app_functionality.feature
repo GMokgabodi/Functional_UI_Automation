@@ -11,17 +11,10 @@ Feature: App functionality
 
   Scenario: Add a new item
     Given I am logged in
-    When I add a todo with text "My first task"
-    Then I should see "My first task" in the list
-
-  Scenario: Edit an item
+    When I select an Item and add it to Cart"
+    Then I should go to cart and see my item in the cart
+    
+  Scenario: Update and Delete Team
     Given I am logged in
-    And a todo "My first task" exists
-    When I edit the todo "My first task" to "Updated task"
-    Then I should see "Updated task" in the list
-
-  Scenario: Delete anitem
-    Given I am logged in
-    And a todo "Updated task" exists
-    When I delete the todo "Updated task"
-    Then I should not see "Updated task" in the list
+    And I want to edit or delete an existing item in my cart
+    Then Click Take a Lot home page to add another item
