@@ -1,3 +1,4 @@
+@ui
 Feature: App functionality
 
   Scenario Outline: Login with invalid credentials, retry with valid ones
