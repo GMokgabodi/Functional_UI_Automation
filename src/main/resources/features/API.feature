@@ -3,7 +3,7 @@ Feature: Todo API
 
   Scenario: Login API with valid credentials
     Given the backend is running
-    When I send a POST to /login with username "admin" and password "admin"
+    When I send a POST to /login with username "eve.holt@reqres.in" and password "cityslicka"
     Then the response status code should be 200
 
   Scenario: Create a todo via API
