@@ -28,6 +28,7 @@ public class StepDefinition {
     @When("I login with username {string} and password {string}")
     public void i_Login_With_Username_And_Password(String invalidUsername, String invalidPassword) throws InterruptedException {
         //Wait for page to be successfully loaded
+        Thread.sleep(5000);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Login')]"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("email")));
 
@@ -107,7 +108,7 @@ public class StepDefinition {
     @When("I select an Item and add it to Cart\"")
     public void i_Select_An_Item_And_Add_It_To_Cart() throws Throwable {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             WebElement item = driver.findElement(By.xpath("//*[@id=\"carousel-0-item-2\"]/article/a"));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", item);
             item.click();
@@ -120,7 +121,7 @@ public class StepDefinition {
     @Then("I should go to cart and see my item in the cart")
     public void i_Should_Go_To_Cart_And_See_My_Item_In_TheCart() {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/div/div[1]/div/div[1]/section/a"))).click();
             By cartIcon = By.xpath("//*[@id=\"cart-title\"]");
             new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(cartIcon));
@@ -143,7 +144,7 @@ public class StepDefinition {
 
     @Then("Click Take a Lot home page to add another item")
     public void click_Take_a_Lot_Home_Page_To_Add_Another_Item() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable
                 (By.xpath("//*[@id=\"shopfront-app\"]/div[3]/div/div/div[1]/a/img"))).click();
     }
