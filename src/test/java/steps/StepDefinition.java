@@ -94,9 +94,6 @@ public class StepDefinition {
     @Given("I am logged in")
     public void i_Am_Logged_In() {
 
-        this.i_Open_The_App();
-        retryWithValidCredentials("gideon.mokgabodi@gmail.com", "B@khira88");
-
         try {
             Thread.sleep(2000);
             wait.until(ExpectedConditions.elementToBeClickable(

@@ -15,7 +15,7 @@ Feature: App functionality
     When I select an Item and add it to Cart"
     Then I should go to cart and see my item in the cart
     
-  Scenario: Update and Delete Team
+  Scenario: Update and Delete Item
     Given I am logged in
     And I want to edit or delete an existing item in my cart
     Then Click Take a Lot home page to add another item
